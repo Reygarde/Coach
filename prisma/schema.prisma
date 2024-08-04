@@ -1,0 +1,45 @@
+// Fournisseur de la base de données à MongoDB
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// Générateur du client Prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Modèle pour Assistant
+model Assistant {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  assistantId String @unique
+}
+
+// Modèle pour UserThread
+model UserThread {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @unique
+  threadId  String
+  createdAt DateTime @default(now())
+}
+
+// Modèle pour ChallengePreferences
+model ChallengePreferences {
+  id                String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String   @unique
+  challengeId       String
+  sendNotifications Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+// Modèle pour UserMeta
+model UserMeta {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  endpoint  String
+  p256dh    String
+  auth      String
+}
