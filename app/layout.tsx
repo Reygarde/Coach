@@ -6,10 +6,10 @@ import { ClerkProvider } from "@clerk/nextjs";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Goggins AI",
+  title: "Coach AI",
   description: "David Goggins AI Coach",
   manifest: "/manifest.json",
-  icons: { apple: "/icon-192x192.png" },
+  icons: { apple: "/reygarde-icon.png" },
 };
 
 export default function RootLayout({
