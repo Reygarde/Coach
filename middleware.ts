@@ -3,9 +3,7 @@ import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
   const isPublicRoute = createRouteMatcher( [
     "/sign-in(.*)",
-    "/sign-out(.*)<",
-    "/",
-    "/profile",
+    "/sign-out(.*)",
     "/api/assistant/create",
     "/api/thread",
     "/api/message/create",

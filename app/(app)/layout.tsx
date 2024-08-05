@@ -4,7 +4,7 @@ import { assistantAtom, userThreadAtom } from "@/atoms";
 import Navbar from "@/components/Navbar";
 import NotificationModal from "@/components/NotificationModal";
 import useServiceWorker from "@/hooks/useServiceWorker";
-import { Assistant, UserThread } from "@prisma/client";
+import { Assistant, UserThread } from ".prisma/client";
 import axios from "axios";
 import { useAtom } from "jotai";
 import { use, useCallback, useEffect, useState } from "react";
