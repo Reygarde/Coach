@@ -8,8 +8,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Coach AI",
   description: "David Goggins AI Coach",
-  manifest: "/manifest.json",
-  icons: { apple: "/reygarde-icon.png" },
 };
 
 export default function RootLayout({
@@ -20,6 +18,14 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          {/* Favicon */}
+          <link rel="icon" href="/reygarde-icon.png" type="image/png" />
+          {/* Métadonnées pour le SEO */}
+          <meta name="theme-color" content="#f69435" />
+          <title>Coach AI</title>
+          <meta name="description" content="David Goggins AI Coach" />
+        </head>
         <body className={inter.className}>{children}</body>
       </html>
     </ClerkProvider>
